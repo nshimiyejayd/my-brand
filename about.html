@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/javascript.js"></script>
+    <script src="js/validate.js"></script>
+</head>
+<body onload="loggedIn()">
+    <header>
+        <!-- <div id="menus-box"> -->
+        <div id="log">
+            <img src="images/site-logo.png">
+        </div>
+        <div id="menus">
+            <a href="index.html"><span>Home</span></a>
+            <span style="border-bottom: 4px solid #06FF88;">About</span>
+            <a href="skills.html"><span>Skills</span></a>
+            <a href="portfolio.html"><span>Portfolio</span></a>
+            <a href="contact.html"><span>Contact</span></a>
+            <a href="blogs.html"><span>Blogs</span></a>
+            <span id="login-span" onclick="showLoginFom()" style="cursor: pointer">Login</span>
+            <a href="admin.html" style="display: none;" id="logged"><span id="login-span" onclick="showLoginFom()">Logged in</span></a>
+            <a href="index.html" style="display: none;" id="a-log"><span><img src="images/logout.PNG" id="logout" onclick="logout()"></span></a>
+        </div>
+        <img src="images/menu-icon.png" id="menu-icon" onclick="showMenus()">
+        <div id="menu-box-hide" style="display: none;">
+            <button id="close-menus" onclick="hideMenus()">X</button>
+            <a href="index.html"><span>Home</span></a><br>
+            <span style="border-bottom: 4px solid #06FF88;">About</span><br>
+            <a href="skills.html"><span>Skills</span></a><br>
+            <a href="portfolio.html"><span>Portfolio</span></a><br>
+            <a href="contact.html"><span>Contact</span></a><br>
+            <a href="blogs.html"><span>Blogs</span></a><br>
+            <span id="login-span" onclick="showLoginFom()">Login</span>
+        </div>
+        <!-- </div> -->
+    </header>
+    <main>
+        <div id="container">
+            <div id="login-form" style="display:none;  z-index: 3;">
+                <img src="images/login-form-image.PNG" id="login-back-img">
+                <p id="validate-message" style="display:none"></p>
+                <div>
+                    <form action="admin.html" onsubmit="return validateInput()">
+                        <input type="text" autocomplete="off" name="login-email" placeholder="Email here..." id="login-email" onkeyup="checkEmailValidation()">
+                        <input type="password" name="login-password" placeholder="Password..." id="login-password" onkeyup="validatePassword()"><br><br><br>
+                        <button type="submit">Login</button>
+                        <button type="button" onclick="cancelLogin()" style="border-color:brown">Cancel</button>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <div id="v-line-about"></div>
+                <span id="about-me-word">About me<span id="line"></span></span>
+            </div>
+            <div id="about-me">
+                <div id="description">
+                    <p>Hello! I enjoy coding Appplications that solve problems in the society and I am very excited to help You!</p>
+                    <div id="i-like-box"><span>I Like To Code</span></div>
+                    <div id="i-like-box2"><span>I Like To Innovate</span></div>
+                </div>
+            </div>
+        </div>
+    </main><br><br>
+    <footer>
+        <div id="socials" style="margin-bottom: -500px;">
+            <img src="images/new-fb.png" id="fb2"><hr>
+            <img src="images/new-git2.png" id="gt2"><hr>
+            <img src="images/new-tweeter.PNG" id="twt2">
+        </div>
+        <div id="my_email" >
+            <p>nshimiyejayd200@gmail.com</p>
+            <p>Copyright © 2022 Damascene All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

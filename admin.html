@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<hmtl lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/javascript.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+</head>
+<body onload="AdminRetrieveArticlesInfo()">
+    <header>
+        <div id="log">
+            <img src="images/site-logo.png">
+        </div>
+        <div id="menus">
+            <a href="index.html"><span>Home</span></a>
+            <a href="about.html"><span>About</span></a>
+            <a href="skills.html"><span>Skills</span></a>
+            <a href="portfolio.html"><span>Portfolio</span></a>
+            <a href="contact.html"><span>Contact</span></a>
+            <a href="blogs.html"><span>Blogs</span></a>
+            <span style="border-bottom: 4px solid #06FF88;">Logged in</span>
+            <a href="#"><span><img src="images/logout.PNG" id="logout" onclick="logout()"></span></a>
+        </div>
+            <img src="images/menu-icon.png" id="menu-icon" onclick="showMenus()">
+            <div id="menu-box-hide" style="display: none;">
+                <button id="close-menus" onclick="hideMenus()">X</button>
+                <a href="index.html"><span>Home</span><br></a>
+                <a href="about.html"><span>About</span></a><br>
+                <a href="skills.html"><span>Skills</span></a><br>
+                <a href="portfolio.html"><span>Portfolio</span></a><br>
+                <a href="contact.html"><span>Contact</span></a><br>
+                <a href="blogs.html"><span>Blogs</span></a><br>
+                <span style="border-bottom: 4px solid #06FF88;">Logged in</span>
+                <a href="#"><span style="background-color:rgb(136, 4, 4); color: white;" onclick="logout()">Logout</span></a>
+            </div>
+    </header>
+    <main>
+        <div id="container">
+            <div id="contents">
+                <br><br><br>
+                <div id="add-inbox-elements">
+                    <div id="storage-type-container" style="display: none;">
+                        <span><input type="radio" id="local-st" name="storage-type" value="Local-storage" onclick="changeStorageToLocal()">Local storage</span>
+                        <span><input type="radio" id="mongodb-st" name="storage-type" value="mongodb" onclick="changeStorageToMongo()">MongoDB</span>
+                    </div>
+                    <img src="images/add-new.PNG" onclick="showEdit()">
+                    <img src="images/mail.png" id="inbox-img" onclick="showMessages()">
+                    
+                </div>
+                <div id="search-container-admin">
+                    <input type="text" id="search-text" placeholder="search..." onkeyup="bringAgainArticles()">
+                </div>
+                <div id="admin-pc">
+                    <div id="articles-list-admin">
+                        <div id="titles-list">
+                            <br>
+                            <span>Articles</span>
+                            <span style="margin-left: 8px">Date</span>
+                            <span style="margin-left: 28px;">Likes</span>
+                            <span style="margin-left: 17px; padding-right: 48px;">Comments</span>
+                            <span style="color: #14FE8E; padding-right: 10px;">Operations</span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="images/loading-gif.gif" id="load-articles-gif" style="display: none;">
+                    </div>
+                    <div id="article-details-admin" style="display:none">
+                        <span id="article-details-window-title-view">Article view</span>
+                        <button onclick="closeViewAmin()" style="margin-left: 90%;">X</button>
+                        <div id="viewing-article-admin">
+                            <p id="viewing-contents">
+                                <span id="viewing-contents-title" style="font-weight:bolder; font-size: 20px;color: rgb(243, 242, 242);"></span><br><br>
+                            </p>
+                            <img id="admin-posted-img" style="max-width:95%"><br><br>
+                            <!-- <p style="color: #5078B5;; font-size: 18px;">Comments on this article</p> -->
+                            <div id="admin-view-comments" style="border: 1px solid rgb(26, 26, 26); display: none;">
+                                <p id="com-name" class="tempName" style="font-size: 16px; margin-left: 10px"><span id="tempDate"></span></p>
+                                <p id="com-emai" class="tempEmail" style="font-size: 16px; margin-top: -20px; margin-left: 10px"></p>
+                                <p  class="tempValue" style="margin-left: 10px; color:white"></p> 
+                            </div><br>    
+                            <div>
+                                <img src="images/loading-gif.gif" id="load-admin-view-gif">
+                            </div>                
+                        </div>
+                       
+                        <div id="edit-view-comment">
+                            <span id="hiden-title" style="display: none;"></span>
+                            <span id="mongo-hiden-id" style="display: none;"></span>
+                            <p id="hiden-arcticle" style="display: none;"></p>
+                            <span id="edit-span" onclick="showEdit()">Edit</span>
+                            <!-- <span onclick="showCommentsAdmin()">View comments</span> -->
+                        </div>
+                    </div>
+                    
+                        <div id="edit-new-article" style="display: none;">
+                            <span id="article-details-window-title-edit">Add new article</span>
+                            <button id="close-edit" onclick="closeEdit()">X</button>
+                            <div id="edit-form">
+                                <form id="arti-form" onsubmit="event.preventDefault(); validateArticle()">
+                                    <label id="article-title-label" for="title-admin" style="color: rgb(162, 161, 161); font-size: 20px; font-family:'Sofia', sans-serif">Title</label>
+                                    <input type="text" name="title" id="article-title" onclick="unborderArticleTitle()"><br>
+                                    <label id="article-desc-label" for="desc" style="color: rgb(162, 161, 161); font-family:'Sofia', sans-serif">Description</label>
+                                    <div id="reach-text">
+                                        <button type="button" id="bold" onclick="setTextBold()">B</button>
+                                        <button type="button" id="italic" onclick="setItalic()"><i>I</i></button>
+                                        <button type="button" id="underline" onclick="setUnderline()"><u>U</u></button>
+                                        <button type="button" id="color" style="border-bottom:3px solid red" onmousemove="diplayColors()">A</button>
+                                        <button type="button" id="add-link"><img src="images/link-img.png" onclick="addLink()"></button>
+                                        <button type="button" id="add-"></button>
+                                        
+                                        </div>   
+                                        <div id="colors" style="display: none;">
+                                            <button type="button" id="yellow" onclick="setYellow()"></button>
+                                            <button type="button" id="light-rose" onclick="setLightRose()"></button>
+                                            <button type="button" id="mageta" onclick="setMageta()"></button>
+                                        </div>              
+                                    <div id="article-place" contenteditable="true" onclick="hideColors()" onfocus="addArticleContentFocus()"></div>
+                                    <br><br>
+                                    <span id="hiden-img-ulr" style="display: none;"></span>
+                                    <div style="display:flex; flex-direction: row;">
+                                        <input type="file" id="uploaded-image" style="width: 27%; margin-top: 30px;" onchange="LoadImage(event)"><br><br>
+                                        <img  id="prev-img" style="display:none; margin-left:50px; width: 140px; height: 130px; margin-top: -27px;"/>
+                                    </div>
+                                    <p id="add-article-valid-msg" style="color:red;position:absolute; font-size:22px;font-family: 'Sofia', sans-serif;"></p>
+                                    <br>
+                                    <button type="submit" id="edit-btn">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="article-comments" style="display:none; margin-top:-610px; margin-left: 780px; background-color: #02011e; width: 570px;">
+                            <span id="article-details-window-title">View || Add comment</span>
+                            <button id="close-article-comment" onclick="hideComments()">X</button>
+                        </div>
+                    </div>
+
+                    <div id="message-container" style="display: none ">
+                        <span id="article-details-window-title-msg" style=" width: 170px;">Messages</span>
+                        <button id="close-edit"onclick="closeMessage()">X</button>
+                        <br>
+                        
+                    </div>
+                    <div id="delete-article-popup" style="display: none;">
+                        <p id="delete-title">Delete</p>
+                        <p id="want-delete">Do want to delete article?</p>
+                        <p id="what-delete"></p>
+                        <div>
+                            <button id="confirm-delete" style="background-color: rgb(195, 47, 47); border:none" onclick="confirmDelete()">Yes</button>
+                            <button onclick="closeDelete()" style="background-color: rgb(126, 125, 125); border:1px solid rgb(3, 3, 250)">No</button>
+                        </div>
+                    </div>
+                    
+            </div>
+        </div>
+    </main><br>
+</body>
+</hmtl>

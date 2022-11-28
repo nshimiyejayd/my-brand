@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/javascript.js"></script>
+    <script src="js/validate.js"></script>
+</head>
+<body onload="loggedIn()">
+    <header>
+        
+        <div id="log">
+            <img src="images/site-logo.png">
+        </div>
+        <div id="menus">
+            <a href="index.html"><span>Home</span></a>
+            <a href="about.html"><span>About</span></a>
+            <span style="border-bottom: 4px solid #06FF88;">Skills</span></a>
+            <a href="portfolio.html"><span>Portfolio</span></a>
+            <a href="contact.html"><span>Contact</span></a>
+            <a href="blogs.html"><span>Blogs</span></a>
+            <span id="login-span" onclick="showLoginFom()" style="cursor: pointer">Login</span>
+            <a href="admin.html" style="display: none;" id="logged"><span id="login-span" onclick="showLoginFom()">Logged in</span></a>
+            <a href="index.html" style="display: none;" id="a-log"><span><img src="images/logout.PNG" id="logout" onclick="logout()"></span></a>
+        </div>
+            <img src="images/menu-icon.png" id="menu-icon" onclick="showMenus()">
+            <div id="menu-box-hide" style="display: none;">
+                <button id="close-menus" onclick="hideMenus()">X</button>
+                <a href="index.html"><span>Home</span></a><br>
+                <a href="about.html"><span >About</span></a><br>
+                <span style="border-bottom: 4px solid #06FF88;">Skills</span><br>
+                <a href="portfolio.html"><span>Portfolio</span></a><br>
+                <a href="contact.html"><span>Contact</span></a><br>
+                <a href="blogs.html"><span>Blogs</span></a><br>
+                <span id="login-span" onclick="showLoginFom()">Login</span>
+            </div>
+    </header>
+    <main>
+        <div id="container">
+            <div id="login-form" style="display:none; z-index: 3;">
+                <img src="images/login-form-image.PNG" id="login-back-img">
+                <p id="validate-message" style="display:none"></p>
+                <div>
+                    <form action="admin.html" method="post" onsubmit="return validateInput()">
+                        <input type="text" autocomplete="off" name="login-email" placeholder="Email here..." id="login-email" onkeyup="checkEmailValidation()">
+                        <input type="password" name="login-password" placeholder="Password..." id="login-password" onkeyup="validatePassword()"><br><br><br>
+                        <button type="submit">Login</button>
+                        <button type="button" onclick="cancelLogin()" style="border-color:brown">Cancel</button>
+                    </form>
+                </div>
+            </div>
+            <div id="other-skills">
+                <div id="images">
+                    <img src="images/react-native.png">
+                    <img src="images/react-js.png">
+                    <img src="images/django.jpg">
+                    <img src="images/spring-boot.png">
+                    <img src="images/postgress.jpg">
+                    <img src="images/networking.jpg">
+                    <img src="images/node-js.jpg">
+                    <img src="images/mysql.jpg">
+                    <img src="images/html-css.jpg">
+                </div>
+            </div>
+            <div id="other-skills-title">
+                <p>Frameworks and others IT skils</p>
+            </div>
+            <div id="languages-skills-title">
+                <p>Programming languages</p>
+            </div>
+            <!-- <div id="min-login" style="display: none; margin-top: -50px; z-index: 9;">
+                <div id="login-form">
+                    <form action="admin.html" onsubmit="return validateInputMin()">
+                        <input type="text" autocomplete="off" placeholder="Email..." id="login-email-min" onkeyup="checkEmailMin()">
+                        <input type="password" placeholder="Password..." id="login-password-min" onkeyup="validatePasswordMin()"><br><br><br>
+                        <p id="min-validate-msg"></p>
+                        <button type="submit">Login</button>
+                        <button type="button" style="border-color:brown" onclick="cancelLoginMin()">Cancel</button>
+                    </form>
+                </div> -->
+            </div>
+            <br><br><br>
+            <div id="skills-cotainer">
+                <div id="skills">
+                    <img src="images/JS.jpg">
+                    <p id="skills-description">I have strong skills in Javascript with its framework like React and Node.js</p>
+                </div>
+             
+                <div id="skills">
+                    <img src="images/sql-img.jpg">
+                    <p id="skills-description">Structured Query Language, I used it  in many projects.
+                    </p>
+                </div>
+                <div id="skills">
+                    <img src="images/java-img.jpg">
+                    <p id="skills-description">I have been a Java developer for long time.</p>
+                </div>
+                <div id="skills">
+                    <img src="images/python-img.jpg">
+                    <p id="skills-description">Most time I implement my projects by using python .</p>
+                </div>
+                <div id="skills">
+                    <img src="images/c++.png">
+                    <p id="skills-description">Most time I implement my projects by using python .</p>
+                </div>
+            </div>
+        </div>
+    </main><br><br><br><br><br>
+    <footer>
+            <div id="socials" style="margin-bottom: -500px;">
+                <img src="images/new-fb.png" id="fb2"><hr>
+                <img src="images/new-git2.png" id="gt2"><hr>
+                <img src="images/new-tweeter.PNG" id="twt2">
+            </div>
+            <div id="my_email" >
+                <p>nshimiyejayd200@gmail.com</p>
+                <p>Copyright © 2022 Damascene All Rights Reserved</p>
+            </div>
+    </footer>
+</body>
+</html>

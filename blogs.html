@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/javascript.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+</head>
+<body onload="clientRetrieveArticle()">
+    <header>
+        <div id="log">
+            <img src="images/site-logo.png">
+        </div>
+        <div id="menus">
+            <a href="index.html"><span >Home</span></a>
+            <a href="about.html"><span>About</span></a>
+            <a href="skills.html"><span>Skills</span></a>
+            <a href="portfolio.html"><span>Portfolio</span></a>
+            <a href="contact.html"><span>Contact</span></a>
+            <span style="border-bottom: 4px solid #06FF88;">Blogs</span></a>
+            <span id="login-span" onclick="showLoginFom()">Login</span>
+            <a href="admin.html" style="display: none;" id="logged"><span id="login-span" onclick="showLoginFom()">Logged in</span></a>
+            <a href="index.html" style="display: none;" id="a-log"><span><img src="images/logout.PNG" id="logout" onclick="logout()"></span></a>
+        </div>
+            <img src="images/menu-icon.png" id="menu-icon" onclick="showMenus()">
+            <div id="menu-box-hide" style="display: none;">
+                <button id="close-menus" onclick="hideMenus()">X</button>
+                <a href="index.html"><span>Home</span></a><br>
+                <a href="about.html"><span>About</span></a><br>
+                <a href="skills.html"><span>Skills</span></a><br>
+                <a href="portfolio.html"><span>Portfolio</span></a><br>
+                <a href="contact.html"><span>Contact</span></a><br>
+                <span style="border-bottom: 4px solid #06FF88;">Blogs</span><br>
+                <span id="login-span" onclick="showLoginFom()">Login</span>
+                <a href="admin.html" style="display: none;" id="logged"><span id="login-span" onclick="showLoginFom()">Logged in</span></a>
+                <a href="index.html" style="display: none;" id="a-log"><span><img src="images/logout.PNG" id="logout" onclick="logout()"></span></a>
+            </div>
+    </header>
+    <main style="margin-bottom: -57px">
+        <div id="container">
+            <div id="article-details" style="display: none;">
+                <span id="article-details-window-title-client">Article details</span>
+                <div id="like-comment-in-detail">
+                    <img src="images/comment-new.PNG" id="client-count-comments" onclick="divScroll()">
+                </div>
+                 <div id="count-like-comment-in-detail">
+                    <span id="comment-count" class="client-comment-count"></span>
+                </div>
+                <button id="close-article-datails" onclick="hideArticleDetails()">X</button>
+                
+                <div>
+                    <img src="images/loading-gif.gif" id="client-wait-view-blog" style="display: none;">
+                </div>
+
+                <div id="article-details-container">
+                    <p id="article-details-title"></p>
+                    <p id="article-details-desc"></p>
+                    <img id="client-comment-image">
+                    <p style="font-size: 20px;margin-left: 12px; color:aqua">Comments</p>
+                    <div>
+                        <form id="client-comment-form" action="#" onsubmit="event.preventDefault(); validateComment()" style="margin-left: 12px" >
+                            <input id="user-comment-name" onfocus="hideUserNameComment()" style="padding: 5px; font-size: 16px; padding-left: 10px;" type="text" placeholder="Enter your names">
+                            <input style="padding: 5px; font-size: 16px;" type="text" autocomplete="off" placeholder="Enter email" id="comment-email" onkeyup="checkCommentEmail()"><br>
+                            <textarea placeholder="Type your comment..." id="comment-textArea" onclick="hideCommentlValidtionMsg()"></textarea>
+                            <br>
+                            <p id="comment-v-msg"></p>
+                            <button type="submit" style="background-color: #22539d; color: rgb(224, 225, 225); padding:8px;border-radius: 20px; font-size: 20px; cursor: pointer;">Submit</button>
+                        </form>
+                    </div>
+                    <span id="hiden-current-article" style="display: none"></span>
+                    <hr>
+                    <div id="temp-client-parent-comment" style="margin-left: 12px;">
+                    </div>
+            </div>
+        </div>
+        <div id="login-form" style="z-index: 3; display: none;">
+            <img src="images/login-form-image.PNG" id="login-back-img">
+            <p id="validate-message" style="display:none"></p>
+            <div>
+                <form action="admin.html" method="post" onsubmit="return validateInput()">
+                    <input type="text" autocomplete="off" name="login-email" placeholder="Email here..." id="login-email" onkeyup="checkEmailValidation()">
+                    <input type="password" name="login-password" placeholder="Password..." id="login-password" onkeyup="validatePassword()"><br><br><br>
+                    <button type="submit">Login</button>
+                    <button type="button" onclick="cancelLogin()" style="border-color:brown">Cancel</button>
+                </form>
+            </div>
+        </div>
+            
+            <div id="contents">
+                <div id="search-blog">
+                    <input type="text" id="client-search" placeholder="search..." onkeyup="retrieveAll()">
+                </div>
+                <span id="blogs-big-tile">I Always Update You!</span>
+                <div id="blogs-container">
+                </div>
+                <div>
+                    <img src="images/loading-gif.gif" id="client-wait-all-blogs" style="display: none;">
+                </div>
+            </div>
+            
+    </main>
+    <footer id="my-footer"> 
+        <div id="socials" style="margin-bottom: -500px;">
+            <img src="images/new-fb.png" id="fb2"><hr>
+            <img src="images/new-git2.png" id="gt2"><hr>
+            <img src="images/new-tweeter.PNG" id="twt2">
+        </div>
+        <div id="my_email" >
+            <p>nshimiyejayd200@gmail.com</p>
+            <p>Copyright © 2022 Damascene All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
