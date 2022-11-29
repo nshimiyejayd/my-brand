@@ -1,0 +1,16 @@
+#article-comments{
+    animation-name: comments;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes comments{
+    0%{
+        margin-top: 500px;
+    }
+    50%{
+        margin-top: -520px;
+    }
+    100%{
+        margin-top: -470px;
+    }
+}

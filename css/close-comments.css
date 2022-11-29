@@ -1,0 +1,20 @@
+#article-comments{
+    animation-name: close-comments;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes close-comments{
+    0%{
+       
+        margin-left: 700px;
+    }
+    50%{
+        margin-left: 900px;
+        opacity: 0.4;
+       transform: rotate(130deg);
+    }
+    100%{
+        margin-left: 1500px;
+        transform: rotate(180deg);
+    }
+}

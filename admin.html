@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<hmtl lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/javascript.js"></script>
+    <script src="js/validate.js"></script>
+</head>
+<body>
+    <header>
+        <div id="log">
+            <img src="images/site-logo.png">
+        </div>
+        <div id="menus">
+            <a href="index.html"><span>Home</span></a>
+            <a href="about.html"><span>About</span></a>
+            <a href="skills.html"><span>Skills</span></a>
+            <a href="portfolio.html"><span>Portfolio</span></a>
+            <a href="contact.html"><span>Contact</span></a>
+            <a href="blogs.html"><span>Blogs</span></a>
+            <span style="border-bottom: 4px solid #06FF88;">Logged in</span>
+            <a href="index.html"><span><img src="images/logout.PNG" id="logout" onclick=""></span></a>
+        </div>
+            <img src="images/menu-icon.png" id="menu-icon" onclick="showMenus()">
+            <div id="menu-box-hide" style="display: none;">
+                <button id="close-menus" onclick="hideMenus()">X</button>
+                <a href="index.html"><span>Home</span><br></a>
+                <a href="about.html"><span>About</span></a><br>
+                <a href="skills.html"><span>Skills</span></a><br>
+                <a href="portfolio.html"><span>Portfolio</span></a><br>
+                <a href="contact.html"><span>Contact</span></a><br>
+                <a href="blogs.html"><span>Blogs</span></a><br>
+                <a href="index.html"><span style="background-color:rgb(136, 4, 4); color: white;">Logout</span></a>
+            </div>
+    </header>
+    
+    <main>
+        <div id="container">
+            <div id="contents">
+               
+                <br><br><br>
+                <div id="add-inbox-elements">
+                    <img src="images/add-new.PNG" onclick="showEdit()">
+                    <img src="images/mail.png" id="inbox-img" onclick="showMessages()">
+                </div>
+                <div id="search-container-admin">
+                    <input type="text" placeholder="search...">
+                    <button>Search</button>
+                </div>
+                <div id="admin-pc">
+                    <div id="articles-list-admin">
+                        <div id="titles-list">
+                            <br>
+                            <span>Articles</span>
+                            <span style="margin-left: 8px">Date</span>
+                            <span style="margin-left: 28px;">Likes</span>
+                            <span style="margin-left: 17px; padding-right: 48px;">Comments</span>
+                            <span style="color: #14FE8E; padding-right: 10px;">Operations</span>
+                        </div>
+                        <div id="list-admin">
+                            <div id="row">
+                                <span>Fondamentals of HTML and CSS</span>
+                                <span style="margin-left: 5px">12-11-2022</span>
+                                <span>76</span>
+                                <span>40</span>
+                            </div>
+                            <span id="view-link"onclick="viewArticle()">View</span>
+                            <span id="delete-article" onclick="deleteArticle()"><img src="images/delete-article.PNG"></span>
+                        </div>
+                        <div id="list-admin">
+                            <div id="row">
+                                <span>Fondamentals of HTML and CSS</span>
+                                <span style="margin-left: 5px">12-11-2022</span>
+                                <span>76</span>
+                                <span>40</span>
+                            </div>
+                            <span id="view-link" onclick="viewArticle()">View</span>
+                            <span id="delete-article" onclick="deleteArticle()"><img src="images/delete-article.PNG"></span>
+                        </div>
+                        <div id="list-admin">
+                            <div id="row">
+                                <span>Fondamentals of HTML and CSS</span>
+                                <span style="margin-left: 5px">12-11-2022</span>
+                                <span>76</span>
+                                <span>40</span>
+                            </div>
+                            <span id="view-link">View</span>
+                            <span id="delete-article"><img src="images/delete-article.PNG"></span>
+                        </div>
+                        <div id="list-admin">
+                            <div id="row">
+                                <span>Fondamentals of HTML and CSS</span>
+                                <span style="margin-left: 5px">12-11-2022</span>
+                                <span>76</span>
+                                <span>40</span>
+                            </div>
+                            <span id="view-link">View</span>
+                            <span id="delete-article"><img src="images/delete-article.PNG"></span>
+                        </div>
+                        <div id="list-admin">
+                            <div id="row">
+                                <span>Fondamentals of HTML and CSS</span>
+                                <span style="margin-left: 5px">12-11-2022</span>
+                                <span>76</span>
+                                <span>40</span>
+                            </div>
+                            <span id="view-link">View</span>
+                            <span id="delete-article"><img src="images/delete-article.PNG"></span>
+                        </div>
+                        <div id="list-admin">
+                            <div id="row">
+                                <span>Fondamentals of HTML and CSS</span>
+                                <span style="margin-left: 5px">12-11-2022</span>
+                                <span>76</span>
+                                <span>40</span>
+                            </div>
+                            <span id="view-link">View</span>
+                            <span id="delete-article"><img src="images/delete-article.PNG"></span>
+                        </div>
+                        <div id="list-admin">
+                            <div id="row">
+                                <span>Fondamentals of HTML and CSS</span>
+                                <span style="margin-left: 5px">12-11-2022</span>
+                                <span>76</span>
+                                <span>40</span>
+                            </div>
+                            <span id="view-link">View</span>
+                            <span id="delete-article"><img src="images/delete-article.PNG"></span>
+                        </div>
+                        </div>
+                        <div id="article-details-admin" style="display:none">
+                            <span id="article-details-window-title">Article view</span>
+                            <button onclick="closeViewAmin()">X</button>
+                            <div id="viewing-article-admin">
+                                <p id="viewing-contents">
+                                    <span id="viewing-contents-title" style="font-weight:bolder; font-size: 20px;color: rgb(139, 139, 139);">Fondamentals of HTML and CSS</span><br><br>
+                                    Okay, so this is the only bit of mandatory theory. In order to begin to write HTML, it helps if you know what you are writing.
+                                    HTML is the language in which most websites are written. HTML is used to create pages and make them functional.
+                                    The code used to make them visually appealing is known as CSS and we shall focus on this in a later tutorial. For now, we will focus on teaching you how to build rather than design.
+                                    Read more: https://html.com/#ixzz7lOGlR
+                                    HTML was first created by Tim Berners-Lee, Robert Cailliau, and others starting in 1989. It stands for Hyper Text Markup Language
+                                    Hypertext means that the document contains links that allow the reader to jump to other places in the document or to another document altogether. The latest version is known as HTML5.
+                                    A Markup Language is a way that computers speak to each other to control how text is processed and presented. To do this HTML uses two things: tags and attributes.
+                                    Read more: https://html.com/#ixzz7lOGsG71c
+                                    Tags and attributes are the basis of HTML
+                                    They work together but perform different functions – it is worth investing 2 minutes in differentiating the two.
+                                    Read more: https://html.com/#ixzz7lOGvg5xf
+                                </p>
+                                <img src="images/html-css.jpg" style="max-width:95%"><br><br>
+                                <div id="pc-admin-add-comment">
+                                    <form>
+                                        <textarea placeholder="Type your comment..." style="width: 60%; height: 80px; font-size:18px"></textarea><br><br>
+                                        <input type="submit" value="Add comment" id="admin-add-comm" style=" border-radius: 20px; color:white; font-size:20px; padding: 8px; cursor:pointer"/>
+                                    </form>
+                                </div>
+                                <p style="color: #5078B5;; font-size: 18px;">Commented on this article</p>
+                                <div id="admin-view-comments" style="border: 1px solid rgb(26, 26, 26);">
+                                    <p id="com-name" style="font-size: 16px; margin-left: 10px">Masegesho Pacifique <span>11-12-2022 12:30</span></p>
+                                    <p id="com-emai" style="font-size: 16px; margin-top: -20px; margin-left: 10px">mpacifique100@gmail.com</p>
+                                    <p style="margin-left: 10px">Very exited!!!!!</p>
+                                </div><br>
+                                <div id="admin-view-comments" style="border: 1px solid rgb(26, 26, 26);">
+                                    <p id="com-name" style="font-size: 16px; margin-left: 10px">Masegesho Pacifique <span>11-12-2022 12:30</span></p>
+                                    <p id="com-emai" style="font-size: 16px; margin-top: -20px; margin-left: 10px">mpacifique100@gmail.com</p>
+                                    <p style="margin-left: 10px">Very exited!!!!!</p>
+                                </div><br>
+                                <div id="admin-view-comments" style="border: 1px solid rgb(26, 26, 26);">
+                                    <p id="com-name" style="font-size: 16px; margin-left: 10px">Masegesho Pacifique <span>11-12-2022 12:30</span></p>
+                                    <p id="com-emai" style="font-size: 16px; margin-top: -20px; margin-left: 10px">mpacifique100@gmail.com</p>
+                                    <p style="margin-left: 10px">Very exited!!!!!</p>
+                                </div><br>
+                               
+                            </div>
+                            <div id="edit-view-comment">
+                                <span id="edit-span" onclick="showEdit()">Edit</span>
+                                <!-- <span onclick="showCommentsAdmin()">View comments</span> -->
+                            </div>
+                        </div>
+
+                        <div id="edit-new-article" style="display:none">
+                            <span id="article-details-window-title">Add new || Edit article</span>
+                            <button id="close-edit" onclick="closeEdit()">X</button>
+                            <div id="edit-form">
+                                <form action="#" onsubmit="return validateArticle()">
+                                    <label for="title-admin" style="color: rgb(162, 161, 161); font-size: 20px; font-family:'Sofia', sans-serif;margin-left: -418px">Title</label>
+                                    <input type="text" name="title" id="article-title" onclick="unborderArticleTitle()"><br>
+                                    <label for="desc" style="color: rgb(162, 161, 161); font-family:'Sofia', sans-serif;margin-left: -375px">Description</label>
+                                    <textarea id="article-place" onclick="unborderAddArticle()"></textarea><br><br>
+                                    <img src="images/upload-img.PNG" id="upload-img"><br><br>
+                                    <button id="edit-btn">Save</button>
+                                </form>
+                                <span id="upload-txt">Upload image</span>
+                            </div>
+                        </div>
+
+                        <div id="article-comments" style="display:none; margin-top:-610px; margin-left: 780px; background-color: #02011e; width: 570px;">
+                            <span id="article-details-window-title">View || Add comment</span>
+                            <button id="close-article-comment" onclick="hideComments()">X</button>
+                            <div id="comments-container"><br><br>
+                                <div id="comments" style="width: 95%;">
+                                    <span id="user-name">Habimana Emmanuel</span>
+                                    <span id="date-time">12-12-2022 03:23 PM</span><br>
+                                    <span id="user-email">hemmenuel@gmail.com</span>
+                                    <p id="comment-content">Thank you! Python made easy</p>
+                                </div><br><br>
+                                <div id="comments" style="width: 95%;">
+                                    <span id="user-name">Habimana Emmanuel</span>
+                                    <span id="date-time">12-12-2022 03:23 PM</span><br>
+                                    <span id="user-email">hemmenuel@gmail.com</span>
+                                   
+                                    <p id="comment-content">Thank you! Python made easy</p>
+                                </div><br><br>
+                                <div id="comments" style="width: 95%;">
+                                    <span id="user-name">Habimana Emmanuel</span>
+                                    <span id="date-time">12-12-2022 03:23 PM</span><br>
+                                    <span id="user-email">hemmenuel@gmail.com</span>
+                                   
+                                    <p id="comment-content">Thank you! Python made easy</p>
+                                </div>
+                            </div>
+                            <div id="add-comment">
+                                <br>
+                                <span style="color: #4c6fa4; margin-left: -328px;">Add comment down here</span>
+                                <hr>
+                                <div id="add-comment-form"><br>
+                                    <form action="#" onsubmit="return validateAdminComment()">
+                                        <textarea placeholder="Type your comment..." style="height: 70px;" id="admin-comment" onclick="unborderAdminComment()"></textarea><br>
+                                        <button type="submit">SEND</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="message-container" style="display: none ">
+                        <span id="article-details-window-title" style=" width: 170px;">Messages</span>
+                        <button id="close-edit"onclick="closeMessage()">X</button>
+                        <br>
+                        <div id="messages">
+                            <p id="sender-mail">paccymaker@gmail.com</p>
+                            <p id="received-date">12-11-2022 03:21 PM</p>
+                            <p id="msg-contents">I would like to thank you for your brave!</p>
+                        </div><br>
+                        <div id="messages">
+                            <p id="sender-mail">paccymaker@gmail.com</p>
+                            <p id="received-date">12-11-2022 03:21 PM</p>
+                            <p id="msg-contents">I would like to thank you for your brave!</p>
+                        </div><br>
+                        <div id="messages">
+                            <p id="sender-mail">paccymaker@gmail.com</p>
+                            <p id="received-date">12-11-2022 03:21 PM</p>
+                            <p id="msg-contents">I would like to thank you for your brave!</p>
+                        </div><br>
+                        <div id="messages">
+                            <p id="sender-mail">paccymaker@gmail.com</p>
+                            <p id="received-date">12-11-2022 03:21 PM</p>
+                            <p id="msg-contents">I would like to thank you for your brave!</p>
+                        </div><br>
+                        <div id="messages">
+                            <p id="sender-mail">paccymaker@gmail.com</p>
+                            <p id="received-date">12-11-2022 03:21 PM</p>
+                            <p id="msg-contents">I would like to thank you for your brave!</p>
+                        </div><br>
+                        <div id="messages">
+                            <p id="sender-mail">paccymaker@gmail.com</p>
+                            <p id="received-date">12-11-2022 03:21 PM</p>
+                            <p id="msg-contents">I would like to thank you for your brave!</p>
+                        </div><br>
+                    </div>
+                    <div id="delete-article-popup" style="display: none;">
+                        <p id="delete-title">Delete</p>
+                        <p id="want-delete">Do want to delete article?</p>
+                        <p id="what-delete">Bult APIs with FastAPI</p>
+                        <div>
+                            <button style="background-color: rgb(195, 47, 47); border:none">Yes</button>
+                            <button onclick="closeDelete()" style="background-color: rgb(126, 125, 125); border:1px solid rgb(3, 3, 250)">No</button>
+                        </div>
+                      
+                    </div>
+                    
+
+                    <!--Mobile view-->
+
+                    <div id="mobile-res-admin">
+                    <!--Add article-->
+                        <div id="m-add-article" style="display: none;">
+                            <div style="background-color: rgb(25, 25, 25); border-radius: 10px 10px 0px 0px; padding-bottom: 12px;">
+                                <span style="color: #5078B5; font-size:22px;margin-left: 10px;">Add new article</span>
+                                <button id="m-close-add-article" onclick="hideMAddArticle()">X</button>
+                            </div>
+                            <div id="add-article-form">
+                                <form onsubmit="return validateMinAddArticle()">
+                                    <input type="text" id="type-aricle-tile" placeholder="Enter title"><br><br>
+                                    <textarea id="m-article-content" placeholder="Type your article..."></textarea><br><br>
+                                    <input type="file" style="font-size: 20px; color: white;"><br><br><br>
+                                    <button type="submit">Add</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!--Dellete article -->
+                        <div id="m-delete-article" style="display: none">
+                            <p>Do you want to delete?</p>
+                            <p style="color: rgb(212, 210, 210)">Fondamentals of HTML and CSS</p>
+                            <div style="text-align:center">
+                                <button id="m-d-yes">Yes</button>
+                                <button id="m-d-no" onclick="hideMdelete()">No</button><br><br>
+                            </div>
+                        </div>
+                        <!--Read message-->>
+                            <div id="m-msg" style="display: none;">
+                                <p style="text-align: center; margin-top: 2px;">
+                                    <button onclick="hideMmessages()" style="width: 20%; border:none; font-size:25px; color: white; padding: 5px; background-color: rgb(150, 7, 7);">X</button>
+                                <br>
+                                </p>
+                                <div id="m-admin-v-msg"><br>
+                                    <p id="m-sender-name">Habimana Jean<span style="margin-left: 15px; font-size: 19px">12-11-2022 04:00 PM</span></p>
+                                    <p id="m-sender-email">hJean@gmail.com</p>
+                                    <p id="m-sender-content">Wonderful tutorial</p>
+                                </div><br>
+                                <div id="m-admin-v-msg"><br>
+                                    <p id="m-sender-name">Habimana Jean<span style="margin-left: 15px; font-size: 19px">12-11-2022 04:00 PM</span></p>
+                                    <p id="m-sender-email">hJean@gmail.com</p>
+                                    <p id="m-sender-content">Wonderful tutorial</p>
+                                </div><br>
+                                <div id="m-admin-v-msg"><br>
+                                    <p id="m-sender-name">Habimana Jean<span style="margin-left: 15px; font-size: 19px">12-11-2022 04:00 PM</span></p>
+                                    <p id="m-sender-email">hJean@gmail.com</p>
+                                    <p id="m-sender-content">Wonderful tutorial</p>
+                                </div><br>
+                                <div id="m-admin-v-msg"><br>
+                                    <p id="m-sender-name">Habimana Jean<span style="margin-left: 15px; font-size: 19px">12-11-2022 04:00 PM</span></p>
+                                    <p id="m-sender-email">hJean@gmail.com</p>
+                                    <p id="m-sender-content">Wonderful tutorial</p>
+                                </div><br>
+                            </div>
+                        <!--View article-->
+                        <div id="m-view-article"  style="display: none">
+                            <div style="background-color: rgb(25, 25, 25); border-radius: 10px 10px 0px 0px; padding-bottom: 12px;">
+                                <span style="color: #5078B5; font-size:22px;margin-left: 10px;">Add new article</span>
+                                <button id="m-close-add-article" onclick="hideMAdminFullArticle()">X</button>
+                            </div>
+                            <p id="m-view-title">Fondamentals of HTML and CSS</p>
+                            <p id="m-view-full">
+                                HTML is the foundation of all web pages. It defines the structure of a page, while CSS defines its style. HTML and CSS are the beginning of everything you need to know to make your first web page! Learn both and start creating amazing websites.
+                            </p>
+                            <div id="add-v-form" style="display:none">
+                                <form>
+                                    <input type="text" required placeholder="Enter title"><br><br>
+                                    <textarea placeholder="Type your article..."></textarea><br><br>
+                                    <input type="file" style="font-size: 20px; color: white;"><br><br><br>
+                                    <button type="submit" style="width:70%">Save changes</button>
+                                </form>
+                            </div><br>
+                            <div id="m-edit-v-btns" style="text-align: center;">
+                                <button id="m-edit-btn"  onclick="editMArticle()">Edit</button>
+                                <button id="m-comment-btn" onclick="showMComments()">Comments</button>
+                            </div><br><br>
+                            <div id="m-hide-comments" style="display: none;">
+                                <div id="m-add-comments" style="text-align: center;">
+                                    <form action="#">
+                                        <textarea placeholder="Type your comment" style="width: 80%; font-size: 18px"></textarea><br><br>
+                                        <button type="submit" style="font-size: 16px; border-radius: 20px; border:none; padding: 8px">Add comment</button>
+                                    </form>
+                                </div>
+                                <div id="m-admin-v-comments"><br>
+                                    <p id="m-commenter-name">Habimana Jean<span style="margin-left: 15px; font-size: 19px">12-11-2022 04:00 PM</span></p>
+                                    <p id="m-commenter-email">hJean@gmail.com</p>
+                                    <p id="m-comments-content">Wonderful tutorial</p>
+                                </div><br>
+                                <div id="m-admin-v-comments"><br>
+                                    <p id="m-commenter-name">Kubwayo Dominique<span style="margin-left: 15px; font-size: 19px">12-11-2022 04:00 PM</span></p>
+                                    <p id="m-commenter-email">kdominique200@gmail.com</p>
+                                    <p id="m-comments-content">Helpful!</p>
+                                </div><br>
+                                <div id="m-admin-v-comments"><br>
+                                    <p id="m-commenter-name">Emanule<span style="margin-left: 15px; font-size: 19px">12-11-2022 04:00 PM</span></p>
+                                    <p id="m-commenter-email">emmaune@gmail.com</p>
+                                    <p id="m-comments-content">That is what I have waiting</p>
+                                </div><br>
+                            </div>    
+                           
+                        </div>
+                        <div id="for-hide">
+                        <div id="m-article">
+                            <p id="m-article-date" >12-11-2022 03:20 PM</p>
+                            <p id="m-article-title">Fondamentals of HTML and CSS</p>
+                            <p id="m-likes"><span>Likes: </span>76</p>
+                            <p id="m-comments"><sapan>Comments: </sapan>40</p>
+                            <div id="m-operations">
+                                <br>
+                                <span onclick="showMAdFullArticle()" >View</span>
+                                <span onclick="showMdelete()">Delete</span>
+                                <br><br>
+                            </div>
+                        </div><br><br>
+                        
+                        <div id="m-article">
+                            <p id="m-article-date" >12-11-2022 03:20 PM</p>
+                            <p id="m-article-title" style="font-weight: bold;">Fondamentals of HTML and CSS</p>
+                            <p id="m-likes"><span>Likes: </span>76</p>
+                            <p id="m-comments"><sapan>Comments: </sapan>40</p>
+                            <div id="m-operations">
+                                <span>View</span>
+                                <span>Delete</span>
+                                <br><br>
+                            </div>
+                        </div><br><br>
+                        <div id="m-article">
+                            <p id="m-article-date" >12-11-2022 03:20 PM</p>
+                            <p id="m-article-title" style="font-weight: bold;">Fondamentals of HTML and CSS</p>
+                            <p id="m-likes"><span>Likes: </span>76</p>
+                            <p id="m-comments"><sapan>Comments: </sapan>40</p>
+                            <div id="m-operations">
+                                <span>View</span>
+                                <span>Delete</span>
+                                <br><br>
+                            </div>
+                        </div><br><br>
+                        <div id="m-article">
+                            <p id="m-article-date" >12-11-2022 03:20 PM</p>
+                            <p id="m-article-title" style="font-weight: bold;">Fondamentals of HTML and CSS</p>
+                            <p id="m-likes"><span>Likes: </span>76</p>
+                            <p id="m-comments"><sapan>Comments: </sapan>40</p>
+                            <div id="m-operations">
+                                <span>View</span>
+                                <span>Delete</span>
+                                <br><br>
+                            </div>
+                        </div><br><br>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </main><br>
+</body>
+</hmtl>
