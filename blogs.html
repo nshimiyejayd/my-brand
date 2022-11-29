@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/javascript.js"></script>
+    <script src="js/validate.js"></script>
+</head>
+<body>
+    <header>
+        <div id="log">
+            <img src="images/site-logo.png">
+        </div>
+        <div id="menus">
+            <a href="index.html"><span >Home</span></a>
+            <a href="about.html"><span>About</span></a>
+            <a href="skills.html"><span>Skills</span></a>
+            <a href="portfolio.html"><span>Portfolio</span></a>
+            <a href="contact.html"><span>Contact</span></a>
+            <span style="border-bottom: 4px solid #06FF88;">Blogs</span></a>
+            <span id="login-span" onclick="showLoginFom()">Login</span>
+        </div>
+            <img src="images/menu-icon.png" id="menu-icon" onclick="showMenus()">
+            <div id="menu-box-hide" style="display: none;">
+                <button id="close-menus" onclick="hideMenus()">X</button>
+                <a href="index.html"><span>Home</span></a><br>
+                <a href="about.html"><span>About</span></a><br>
+                <a href="skills.html"><span>Skills</span></a><br>
+                <a href="portfolio.html"><span>Portfolio</span></a><br>
+                <a href="contact.html"><span>Contact</span></a><br>
+                <span style="border-bottom: 4px solid #06FF88;">Blogs</span><br>
+                <span id="login-span" onclick="showLoginFom()">Login</span>
+            </div>
+    </header>
+    <main style="margin-bottom: -57px">
+        <div id="container">
+            <div id="login-form" style="display:none; z-index: 3;  margin-top: -40px;">
+                <img src="images/login-form-image.PNG">
+                <p id="validate-message" style="display:none"></p>
+                <div>
+                    <form action="admin.html" onsubmit="return validateInput()">
+                        <input type="email" name="login-email" placeholder="Email..." id="login-email" onclick="hideMessage()">
+                        <input type="password" name="login-password" placeholder="Password..." id="login-password" onclick="hideMessagePassword()"><br><br><br>
+                        <button type="submit">Login</button>
+                        <button type="button" onclick="cancelLogin()" style="border-color:brown">Cancel</button>
+                    </form>
+                </div>
+            </div>
+            <div id="contents">
+                <div id="search-blog">
+                    <input type="text" placeholder="search...">
+                    <button>Search</button>
+                </div>
+                <span id="blogs-big-tile">I Always Update You!</span>
+                <div id="blogs-container">
+                    <div id="blog">
+                        <p id="blog-title" onclick="showArticleDetails()">Fondamentals of HTML and CSS </p>
+                        <p id="blog-desc" onclick="showArticleDetails()">Hypertext markup language (HTML) structures documents such as web pages by...</p>
+                        <div id="like-comment">
+                            <img src="images/like-new2-img.png">
+                            <img src="images/comment-new.PNG" onclick="showArticleDetails()">
+                        </div>
+                        <div id="count-like-comment">
+                            <span id="like-count">76</span>
+                            <span id="comment-count">40</span>
+                        </div>
+                         <!-- for mobile full article -->
+                         <div id ="full-article-container">
+                            <div id="full-article">
+                                <p id="full-text" style="display: none;">The word Core describes the basic concept of something, and here, the phrase 'Core Java' defines the basic Java that covers the basic concept of Java programming language. We all are aware that Java is one of the well-known and widely used programming languages, and to begin with it, the beginner has to start the journey with Core Java and then towards the Advance Java. The Java programming language is a general-purpose programming language that is based on the OOPs concept. The ocean of Java is too deep to learn, i.e., as much you learn more, you will know its depth.
+                                </p>
+                            </div>
+                            <!--Add comments-->
+                           
+                            <div id="comments-min" style="display: none;">
+                                <br><br><br>
+                                <div id="add-comments-min">
+                                    <form action="#"  onsubmit="return validateCommentMin()">
+                                        <input type="text" placeholder="Your name...">
+                                        <input type="email" placeholder="Your email.."  id="comment-user-email" onclick="unborderEmail()">
+                                        <textarea placeholder="comment..." id="min-coment-area" onclick="unborderComment()"></textarea>
+                                        <button type="submit">Add comment</button>
+                                    </form>
+                                </div>
+                                <div id="comments-min-sender">
+                                    <p>Habimana</p>
+                                    <p>hbimana@gmail.com</p>
+                                    <p>12-11-2022 02:51 PM</p><br>
+                                </div>
+                                <div id="comment-contents">
+                                    <p>That is good new! I have never hard this That is good new! I have never hard this </p>
+                                </div>
+                                <div id="comments-min-sender">
+                                    <p>Habimana</p>
+                                    <p>hbimana@gmail.com</p>
+                                    <p>12-11-2022 02:51 PM</p><br>
+                                </div>
+                                <div id="comment-contents">
+                                    <p>That is good new! I have never hard this That is good new! I have never hard this </p>
+                                </div>
+                                
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="blog">
+                        <p id="blog-title" onclick="showArticleDetails()">Build Mobile App with Python</p>
+                        <p id="blog-desc" onclick="showArticleDetails()"><img src="images/phones (2).png"></p>
+                        <div id="like-comment">
+                            <img src="images/like-new2-img.png">
+                            <img src="images/comment-new.PNG" onclick="showArticleDetails()">
+                        </div>
+                        <div id="count-like-comment">
+                            <span id="like-count">76</span>
+                            <span id="comment-count">40</span>
+                        </div>
+                    </div>
+                    <div id="blog">
+                        <p id="blog-title" onclick="showArticleDetails()">Core Java Summary</p>
+                        <p id="blog-desc" onclick="showArticleDetails()">Java is a multi-platform, object-oriented,  that can be used as a platform in itself. It is a fast, secure, reliable programming ...</p>
+                        <div id="like-comment">
+                            <img src="images/like-new2-img.png">
+                            <img src="images/comment-new.PNG" onclick="showArticleDetails()">
+                        </div>
+                        <div id="count-like-comment">
+                            <span id="like-count">76</span>
+                            <span id="comment-count">40</span>
+                        </div>
+                    </div>
+                    <div id="blog">
+                        <p id="blog-title" onclick="showArticleDetails()">Core Java Summary</p>
+                        <p id="blog-desc" onclick="showArticleDetails()">Java is a multi-platform, object-oriented,  that can be used as a platform in itself. It is a fast, secure, reliable programming ...</p>
+                        <div id="pc-like-comment">
+                            <div id="like-comment">
+                                <img src="images/like-new2-img.png">
+                                <img src="images/comment-new.PNG" onclick="showArticleDetails()">
+                            </div>
+                            <div id="count-like-comment">
+                                <span id="like-count">76</span>
+                                <span id="comment-count">40</span>
+                            </div>
+                        </div>
+                        
+                    <!-- for mobile full article -->
+                        <div id ="full-article-container">
+                            <div id="full-article">
+                                <p id="full-text" style="display: none;">The word Core describes the basic concept of something, and here, the phrase 'Core Java' defines the basic Java that covers the basic concept of Java programming language. We all are aware that Java is one of the well-known and widely used programming languages, and to begin with it, the beginner has to start the journey with Core Java and then towards the Advance Java. The Java programming language is a general-purpose programming language that is based on the OOPs concept. The ocean of Java is too deep to learn, i.e., as much you learn more, you will know its depth. Java is a platform-independent and robust programming language. The principle followed by Java is WORA that says Write Once, Run Anywhere. The programming language is quite simple and easy to understand. But one should know that Core Java is not different from Java. Java is complete in itself, but for the beginners, it is natural that the beginner must begin with the core concepts of Java. In actual, Java has different editions, where Core Java is one of the parts of an edition.</p>
+                            </div>
+                            <div id="like-comment-for-min">
+                                <div id="like-comment">
+                                    <img src="images/like-new2-img.png">
+                                    <img src="images/comment-new.PNG" onclick="expandArticle()">
+                                </div>
+                                <div id="count-like-comment">
+                                    <span id="like-count">76</span>
+                                    <span id="comment-count">40</span>
+                                </div>
+                            </div>
+                            <!--Comments-->
+                            <br><br>
+                            <div id="comments-min" style="display: none;">
+                                <div id="comments-min-sender">
+                                    <p>Habimana</p>
+                                    <p>hbimana@gmail.com</p>
+                                    <p>12-11-2022 02:51 PM</p><br>
+                                </div>
+                                <div id="comment-contents">
+                                    <p>That is good new! I have never hard this That is good new! I have never hard this </p>
+                                </div>
+                                <div id="comments-min-sender">
+                                    <p>Habimana</p>
+                                    <p>hbimana@gmail.com</p>
+                                    <p>12-11-2022 02:51 PM</p><br>
+                                </div>
+                                <div id="comment-contents">
+                                    <p>That is good new! I have never hard this That is good new! I have never hard this </p>
+                                </div>
+                               
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="blog">
+                        <p id="blog-title" onclick="showArticleDetails()">Core Java Summary</p>
+                        <p id="blog-desc" onclick="showArticleDetails()">Java is a multi-platform, object-oriented,  that can be used as a platform in itself. It is a fast, secure, reliable programming ...</p>
+                        <div id="like-comment">
+                            <img src="images/like-new2-img.png">
+                            <img src="images/comment-new.PNG" onclick="showArticleDetails()">
+                        </div>
+                        <div id="count-like-comment">
+                            <span id="like-count">76</span>
+                            <span id="comment-count">40</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="article-details" style="display: none; width: 900px">
+                <span id="article-details-window-title">Article details</span>
+                <div id="like-comment-in-detail">
+                    <img src="images/like-new2-img.png">
+                    <img src="images/comment-new.PNG" onclick="divScroll()">
+                </div>
+                <div id="count-like-comment-in-detail">
+                    <span id="like-count">76</span>
+                    <span id="comment-count">40</span>
+                </div>
+                <button id="close-article-datails" onclick="hideArticleDetails()">X</button>
+                <div id="article-details-container">
+                    <p id="article-details-title">Core Java Summary</p>
+                    <p id="article-details-desc">The word Core describes the basic concept of something, and here, the phrase 'Core Java' defines the basic Java that covers the basic concept of Java programming language. We all are aware that Java is one of the well-known and widely used programming languages, and to begin with it, the beginner has to start the journey with Core Java and then towards the Advance Java. The Java programming language is a general-purpose programming language that is based on the OOPs concept. The ocean of Java is too deep to learn, i.e., as much you learn more, you will know its depth. Java is a platform-independent and robust programming language. The principle followed by Java is WORA that says Write Once, Run Anywhere. The programming language is quite simple and easy to understand. But one should know that Core Java is not different from Java. Java is complete in itself, but for the beginners, it is natural that the beginner must begin with the core concepts of Java. In actual, Java has different editions, where Core Java is one of the parts of an edition.</p>
+                    <img src="images/java-img.jpg">
+                    <p style="font-size: 20px;margin-left: 12px; color:aqua">Comments</p>
+                    <div>
+                        <form action="#" onsubmit="return validateComment()" style="margin-left: 12px" >
+                            <input style="padding: 5px; font-size: 16px; padding-left: 10px;" type="text" placeholder="Enter your names">
+                            <input style="padding: 5px; font-size: 16px;" type="email" placeholder="Enter email" id="comment-email" onclick="hideEmailValidtionMsg()">
+                            <textarea style="padding: 10px; display: flex; font-size: 16px; margin-top: 10px; width: 46%;" placeholder="Type your comment..." id="comment-textArea" onclick="hideCommentlValidtionMsg()"></textarea>
+                            <br>
+                            <button type="submit" style="padding:5px;border-radius: 20px; font-size: 20px;">Submit</button>
+                            <p id="comment-v-msg" style="display: none;"></p>
+                        </form>
+                    </div>
+                    <hr>
+                    <div style="margin-left: 12px; border: 1px solid rgb(93, 93, 94); width: 95%; margin-top: 10px;">
+                        <p style="font-size: 18px; color: #5078B5;">Kubwayo Dominic <span>12-11-2022 10:00AM</span></p>
+                        <p style="font-size: 18px; color: #5078B5; display: flex; margin-top:-14px">dominic@gmail.com</p>
+                        <p style="font-size:20px;color: white; line-height: 30px;">I will tel you later about that</p>
+                    </div>
+                    <div style="margin-left: 12px; border: 1px solid rgb(93, 93, 94); width: 95%; margin-top: 10px;">
+                        <p style="font-size: 18px; color: #5078B5;">Kubwayo Dominic <span>12-11-2022 10:00AM</span></p>
+                        <p style="font-size: 18px; color: #5078B5; display: flex; margin-top:-14px">dominic@gmail.com</p>
+                        <p style="font-size:20px;color: white; line-height: 30px;">I will tel you later about that</p>
+            
+                    </div>
+                    <div style="margin-left: 12px; border: 1px solid rgb(93, 93, 94); width: 95%; margin-top: 10px;">
+                        <p style="font-size: 18px; color: #5078B5;">Kubwayo Dominic <span>12-11-2022 10:00AM</span></p>
+                        <p style="font-size: 18px; color: #5078B5; display: flex; margin-top:-14px">dominic@gmail.com</p>
+                        <p style="font-size:20px;color: white; line-height: 30px;">I will tel you later about that</p>
+                        <br>
+                    </div><br><br>
+                </div>
+            </div>
+            <div id="min-login" style="display: none; margin-top: -1900px;">
+                <div id="login-form">
+                    <form action="admin.html" onsubmit="return validateInputMin()">
+                        <input type="email" placeholder="Email..." id="login-email-min" onclick="hideMessageMin()">
+                        <input type="password" placeholder="Password..." id="login-password-min" onclick="hideMessagePasswordMin()"><br><br><br>
+                        <p id="min-validate-msg" style="display: none;"></p>
+                        <button type="submit">Login</button>
+                        <button type="button" style="border-color:brown" onclick="cancelLoginMin()">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="socials" style="margin-bottom: -500px;">
+            <img src="images/new-fb.png" id="fb2"><hr>
+            <img src="images/new-git2.png" id="gt2"><hr>
+            <img src="images/new-tweeter.PNG" id="twt2">
+        </div>
+        <div id="my_email" >
+            <p>nshimiyejayd200@gmail.com</p>
+            <p>Copyright © 2022 Damascene All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

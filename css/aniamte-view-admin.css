@@ -1,0 +1,23 @@
+#article-details-admin{
+    animation-name: view;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes view{
+    0%{
+        margin-top: 700px;
+    }
+    25%{
+        margin-top: -200px
+    }
+    50%{
+        margin-top: -300px;
+    }
+    75%{
+        margin-top: -400px
+    }
+    100%{
+        margin-top: -570px;
+    }
+}

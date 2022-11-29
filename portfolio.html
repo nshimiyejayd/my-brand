@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/javascript.js"></script>
+    <script src="js/validate.js"></script>
+</head>
+<body>
+    <header>
+        <div id="log">
+            <img src="images/site-logo.png">
+        </div>
+        <div id="menus">
+            <a href="index.html"><span>Home</span></a>
+            <a href="about.html"><span>About</span></a>
+            <a href="skills.html"><span>Skills</span></a>
+            <span style="border-bottom: 4px solid #06FF88;">Portfolio</span>
+            <a href="contact.html"><span>Contact</span></a>
+            <a href="blogs.html"><span>Blogs</span></a>
+            <span onclick="showLoginFom()" style="cursor: pointer">Login</span>
+        </div>
+            <img src="images/menu-icon.png" id="menu-icon" onclick="showMenus()">
+            <div id="menu-box-hide" style="display: none;">
+                <button id="close-menus" onclick="hideMenus()">X</button>
+                <a href="index.html"><span>Home</span></a><br>
+                <a href="about.html"><span >About</span></a><br>
+                <a href="skills.html" ><span>Skills</span></a><br>
+                <span style="border-bottom: 4px solid #06FF88;">Portfolio</span></a><br>
+                <a href="contact.html"><span>Contact</span></a><br>
+                <a href="blogs.html"><span>Blogs</span></a><br>
+                <span id="login-span" onclick="showLoginFom()">Login</span>
+            </div>
+    </header>
+    <main>
+        <div id="container">
+            <div id="login-form" style="display:none;  margin-top: -80px; z-index: 3;">
+                <img src="images/login-form-image.PNG">
+                <p id="validate-message" style="display:none"></p>
+                <div>
+                    <form action="admin.html" onsubmit="return validateInput()">
+                        <input type="email" name="login-email" placeholder="Email..." id="login-email" onclick="hideMessage()">
+                        <input type="password" name="login-password" placeholder="Password..." id="login-password" onclick="hideMessagePassword()"><br><br><br>
+                        <button type="submit">Login</button>
+                        <button type="button" onclick="cancelLogin()" style="border-color:brown">Cancel</button>
+                    </form>
+                </div>
+            </div>
+            <div id="v-line-about" style="margin-top:10px"></div>
+            <span id="about-me-word">Some Things I’ve Built<span id="line"></span></span>
+        
+            <br>
+            <div id="my-works">
+                
+                <div id="work">
+                    <p style="color:aqua; font-size: 23px; margin-bottom: -2px; margin-top: -10px;">Karitsiye</p>
+                    <img src="images/project-image.PNG">
+                    <p id="work-desc">Karitsiye, Amazing web application that connect you with people in the same location you are.</p>
+                </div>
+                <div id="work">
+                    <p style="color:aqua; font-size: 23px;margin-bottom: -2px; margin-top: -10px;">Roll The Ball</p>
+                    <img src="images/ball.jpg">
+                    <p id="work-desc">Roll The Ball, Fun computer game  that can sharpen your mind and make happy.</p>
+                </div>
+            </div>
+
+            <div id="min-login" style="display: none; margin-top: -765px;">
+                <div id="login-form">
+                    <form action="admin.html" onsubmit="return validateInputMin()">
+                        <input type="email" placeholder="Email..." id="login-email-min" onclick="hideMessageMin()">
+                        <input type="password" placeholder="Password..." id="login-password-min" onclick="hideMessagePasswordMin()"><br><br><br>
+                        <p id="min-validate-msg" style="display: none;"></p>
+                        <button type="submit">Login</button>
+                        <button type="button" style="border-color:brown" onclick="cancelLoginMin()">Cancel</button>
+                    </form>
+                </div>
+        </div>
+    </main>
+    <footer>
+        <div id="socials" style="margin-bottom: -500px;">
+            <img src="images/new-fb.png" id="fb2"><hr>
+            <img src="images/new-git2.png" id="gt2"><hr>
+            <img src="images/new-tweeter.PNG" id="twt2">
+        </div>
+        <div id="my_email" >
+            <p>nshimiyejayd200@gmail.com</p>
+            <p>Copyright © 2022 Damascene All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
